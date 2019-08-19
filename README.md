@@ -27,10 +27,7 @@ instalar os `node_modules`, configurar as pastas `ios` e `android`, fazer o `bui
 ```sh
 yarn install
 ```
-depois 
-```sh
-npm i
-```
+
 ou
 ```sh
 npm install
