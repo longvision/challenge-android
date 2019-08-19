@@ -16,7 +16,6 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 function DetailHeader({ navigation }) {
-  //Chama a api para carregar as lista de gyms
   handleBack = () => {
     navigation.goBack();
   };

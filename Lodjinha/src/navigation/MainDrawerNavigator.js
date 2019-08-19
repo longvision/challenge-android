@@ -6,21 +6,12 @@ import {
   DrawerItems
 } from 'react-navigation';
 
-import {
-  StyleSheet,
-  Image,
-  Text,
-  View,
-  SafeAreaView,
-  Dimensions
-} from 'react-native';
+import { Image, Text, View, SafeAreaView } from 'react-native';
 
 import HomeScreenNavigator from '~/navigation/routes/HomeScreenNavigator';
-import Home from '~/pages/Home';
-import About from '~/pages/About';
+
 import AboutScreenNavigator from '~/navigation/routes/AboutScreenNavigator';
 
-import { ScrollView } from 'react-native-gesture-handler';
 import GlobalStyles from '~/config/GlobalStyles';
 import bg from '~/assets/Images/drawable-xxxhdpi/menu_pattern.png';
 import logo_navbar from '~/assets/Images/drawable-xxxhdpi/logo_navbar.png';

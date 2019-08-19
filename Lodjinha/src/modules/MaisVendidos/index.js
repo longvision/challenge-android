@@ -13,12 +13,10 @@ import Product from '~/components/Product';
 import api from '~/services/api';
 import GlobalStyles from '~/config/GlobalStyles';
 function MaisVendidos({ navigation }) {
-  //Estado local: gyms
   const [maisvendidos, setMaisVendidos] = useState();
 
-  //Chama a api para carregar as lista de gyms
   console.log(maisvendidos);
-  //Hook semelhante ao 'componentDidMount', para carregar as gyms
+
   useEffect(() => {
     async function loadMaisVendidos() {
       const response = await api.get('/produto/maisvendidos/');

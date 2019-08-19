@@ -14,14 +14,10 @@ import Category from '~/components/Category';
 import api from '~/services/api';
 
 function Categories({ navigation }) {
-  //Estado local: gyms
   const [categories, setCategories] = useState();
   const [loading, setLoading] = useState(true);
 
-  // console.log(categories);
-  //Hook semelhante ao 'componentDidMount', para carregar as gyms
   useEffect(() => {
-    //Chama a api para carregar as lista de gyms
     async function loadCategories() {
       const response = await api.get('/categoria/');
       const data = await response.data.data.map(b => ({

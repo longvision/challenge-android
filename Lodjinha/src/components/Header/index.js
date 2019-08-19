@@ -1,14 +1,6 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React from 'react';
 
-import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  Platform,
-  Dimensions
-  // TouchableOpacity
-} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
 import {
   TouchableHighlight,
@@ -16,12 +8,8 @@ import {
 } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import GlobalStyles from '~/config/GlobalStyles';
-// import category from 'src/store/reducers/category';
 
 function Header({ navigation, item }) {
-  // const item = useSelector(state => state.category.selectedCategory);
-
-  // useEffect(() => {}, [item]);
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.btn} onPress={navigation.goBack}>
@@ -42,7 +30,7 @@ export default Header;
 const styles = StyleSheet.create({
   container: {
     height: 60,
-    // paddingTop: 50,
+
     backgroundColor: '#5e2a84',
     flexDirection: 'row',
     justifyContent: 'flex-start',

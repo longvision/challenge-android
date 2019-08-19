@@ -1,31 +1,25 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import HTML from 'react-native-render-html';
-import logo from '~/assets/Images/drawable-xxxhdpi/logo_navbar.png';
-import { FAB, Portal, Provider } from 'react-native-paper';
+
+import { FAB } from 'react-native-paper';
 
 import GeneralStatusBarColor from '~/components/GeneralStatusBarColor';
 
 import {
   View,
-  Alert,
   Text,
-  FlatList,
   Image,
   StyleSheet,
-  Platform,
   ScrollView,
   Dimensions
 } from 'react-native';
-import {
-  TouchableHighlight,
-  TouchableOpacity
-} from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import Header from '~/components/Header';
+
 import FlashMessage from 'react-native-flash-message';
 import { showMessage } from 'react-native-flash-message';
-import Product from '~/components/Product';
+
 import { Container } from './styles';
 import api from '~/services/api';
 import GlobalStyles from '~/config/GlobalStyles';
@@ -33,12 +27,9 @@ import GlobalStyles from '~/config/GlobalStyles';
 function Details({ navigation }) {
   const productId = useSelector(state => state.product.selectedProduct.id);
 
-  //Estado local: gyms
   const [detail, setDetail] = useState([]);
   const [reserve, setReserve] = useState(false);
   const [response, setResponse] = useState();
-
-  //Chama a api para carregar as lista de gyms
 
   async function loadDetails() {
     const response = await api.get(`/produto/${productId}`);

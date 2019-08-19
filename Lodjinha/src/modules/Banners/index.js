@@ -1,15 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
-import logo from '~/assets/Images/drawable-xxxhdpi/logo_navbar.png';
-
-import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  Platform,
-  Dimensions
-} from 'react-native';
+import { View, StyleSheet, Dimensions } from 'react-native';
 
 import Carousel from 'react-native-banner-carousel';
 
@@ -17,15 +8,10 @@ import Banner from '~/components/Banner';
 import api from '~/services/api';
 
 function Banners() {
-  //Estado local: gyms
   const [banner, setBanner] = useState();
 
-  //Estilo dos banners
   const BannerWidth = Dimensions.get('window').width;
-  const BannerHeight = 260;
-  //Chama a api para carregar as lista de gyms
 
-  //Hook semelhante ao 'componentDidMount', para carregar as gyms
   useEffect(() => {
     async function loadBanner() {
       const response = await api.get('/banner/');
@@ -63,9 +49,7 @@ function Banners() {
 export default Banners;
 //Estilização do componente
 const styles = StyleSheet.create({
-  container: {
-    // marginTop: Platform.OS === 'ios' ? 34 : 0
-  },
+  container: {},
   list: {
     marginTop: 15
   },

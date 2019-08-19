@@ -6,11 +6,10 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import * as CategoriesActions from '~/store/actions/category';
 import GlobalStyles from '~/config/GlobalStyles';
-//Inicio do componente
+
 export default function Category({ data, navigation }) {
   const dispatch = useDispatch();
 
-  //Navegação e disparo de ação para selecionar a atividade desejada e enviar ao reducer.
   handleToggle = () => {
     dispatch(CategoriesActions.toggleCategory(data.descricao));
     navigation.navigate('FilteredProducts', {

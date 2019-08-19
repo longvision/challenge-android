@@ -1,16 +1,15 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import * as ProductActions from '~/store/actions/product';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import GlobalStyles from '~/config/GlobalStyles';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-//Inicio do componente
+
 export default function Product({ data, navigation }) {
-  //Estado proveniente da Store
   const dispatch = useDispatch();
-  //Navegação e disparo de ação para selecionar a atividade desejada e enviar ao reducer.
+
   handleNavigate = () => {
     dispatch(ProductActions.toggleProduct(data));
     console.log(data);

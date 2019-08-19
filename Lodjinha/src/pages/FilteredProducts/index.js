@@ -1,43 +1,23 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-// import logo from '~/assets/Images/drawable-xxxhdpi/logo_navbar.png';
-import { FAB, Portal, Provider } from 'react-native-paper';
-import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  ActivityIndicator,
-  Platform,
-  Dimensions
-} from 'react-native';
+import { FAB } from 'react-native-paper';
+import { View, FlatList, StyleSheet } from 'react-native';
 import GeneralStatusBarColor from '~/components/GeneralStatusBarColor';
 import Product from '~/components/Product';
 import Header from '~/components/Header';
 import { Container } from './styles';
 import api from '~/services/api';
-import {
-  TouchableHighlight,
-  TouchableOpacity
-} from 'react-native-gesture-handler';
-import * as CategoryActions from '~/store/actions/category';
 
 function FilteredProducts({ navigation }) {
   const category = useSelector(state => state.category.selectedCategory);
 
-  //Estado local: gyms
   const [filtered, setFiltered] = useState([]);
   const [changePage, setChangePage] = useState(false);
   const [limit, setLimit] = useState(20);
   const [offset, setOffset] = useState(0);
   const [showButtons, setShowButtons] = useState(true);
 
-  // TODO: resolver a listagem
-  //Chama a api para carregar as lista de gyms
-
-  // Carregar todos os items por categoria
-  // 2.
   async function load() {
     const response = await api.get(`/produto?limit=${limit}&offset=${offset}`);
 
@@ -66,8 +46,7 @@ function FilteredProducts({ navigation }) {
       setOffset(offset - 20);
     }
   }, [limit]);
-  // TODO: verificar porque a showless nao funciona
-  //Hook que renderiza ao mudar de página
+
   useEffect(() => {
     if (changePage) {
       load();
@@ -79,7 +58,6 @@ function FilteredProducts({ navigation }) {
     console.log(offset);
   }, [changePage, filtered]);
 
-  //Hook que renderiza ao entrar na página fazendo loading da primeira página
   useEffect(() => {
     if (
       filtered &&
