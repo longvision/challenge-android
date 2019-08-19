@@ -27,6 +27,10 @@ instalar os `node_modules`, configurar as pastas `ios` e `android`, fazer o `bui
 ```sh
 yarn install
 ```
+depois 
+```sh
+npm i
+```
 ou
 ```sh
 npm install
@@ -77,7 +81,7 @@ https://stackoverflow.com/questions/50453883/react-native-build-failed-react-rct
 1. Abra o terminal.
 2. Vá para a pasta ios.
 3. Saia do Xcode.
-4. Rode o commando   ```$ run pod install```.
+4. Rode o commando   ```pod install```.
 5. Abra o arquivo .xcworkspace.
 6. Dê um Clean (cmd+shift+k) e o build (cmd+b) no projeto.
 
@@ -104,6 +108,7 @@ react-native run-android
 ```sh
 yarn start
 ```
+
 ou
 ```sh
 npm start
